@@ -38,7 +38,7 @@ files:
 #   "permissions" section altogether. A blank or incomplete "permissions"
 #   section may cause associated deployments to fail.
 permissions:
-  - object: /usr/share/tomcat8/webapps/ROOT
+  - object: /usr/share/tomcat8/webapps/ROOT/scripts
     pattern:
     except:
     owner: root
