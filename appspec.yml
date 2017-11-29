@@ -41,9 +41,9 @@ permissions:
   - object: /usr/share/tomcat8/webapps/ROOT
     pattern:
     except:
-    owner:
-    group:
-    mode: 
+    owner: root
+    group: 
+    mode: 777
     acls:
       -
     context:
@@ -51,7 +51,7 @@ permissions:
       type:
       range:
     type:
-      -
+      - file
 # If you are not running any commands on the Amazon EC2 instance, then remove 
 #   the "hooks" section altogether. A blank or incomplete "hooks" section
 #   may cause associated deployments to fail.
@@ -116,7 +116,7 @@ hooks:
 # During the ValidateService deployment lifecycle event, run the commands 
 #   in the script specified in "location".
   ValidateService: 
-    - location: scripts/monitorService.sh 
+    - location: scripts/validate-service:w.sh 
       timeout: 3600
       runas: codedeployuser
     - location: 
