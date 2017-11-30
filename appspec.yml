@@ -89,7 +89,7 @@ hooks:
 # During the BeforeInstall deployment lifecycle event, run the commands 
 #   in the script specified in "location".
   BeforeInstall:
-    - location: scripts/install_dependencies.sh
+    - location: scripts/before_install.sh
       timeout: 300
       runas: root
     - location:
