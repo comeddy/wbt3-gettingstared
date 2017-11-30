@@ -5,13 +5,18 @@ files:
     destination: /usr/share/tomcat8/webapps/ROOT
 hooks:
   BeforeInstall:
-    - location: scripts/before_install.sh
+    - location: codedeploy-scripts/before_install.sh
       timeout: 300
       runas: root
-    - location: scripts/start_server.sh
+  ApplicationStart:
+    - location: codedeploy-scripts/start_server.sh
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: scripts/stop_server.sh
+    - location: codedeploy-scripts/stop_server.sh
       timeout: 300
       runas: root
+  ValidateService:
+    - location: codedeploy-scripts/validate-service:w.sh
+      timeout: 3600
+      runas: codedeployuser
