@@ -1,3 +1,3 @@
 #!/bin/bash
-/etc/init.d/tomcat8 start
+service httpd start
 
